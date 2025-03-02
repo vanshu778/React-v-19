@@ -1,13 +1,18 @@
+//import React from "react";
+
 export const App = () => {
-  return (
-    <div>
+  // return ([<NetflixSeries key='1'/>,<NetflixSeries key='2'/>]
+   // )
+  return(  
+  <>
   <NetflixSeries/>
   <NetflixSeries/>
 <NetflixSeries/>
 <NetflixSeries/>
-<NetflixSeries/>
-  </div>
-  )
+ <NetflixSeries/>
+  </>
+  );
+
 };
 
 const NetflixSeries = () => {
