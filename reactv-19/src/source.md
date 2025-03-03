@@ -9,3 +9,10 @@ Empty strings ("") are also considered valid outputs and are rendered as well.
 //* 2: Expressions //? JSX allows you to write JavaScript expressions inside curly braces. This includes operations, function calls, and other JavaScript expressions that produce a value.
 
 //* 3. Function Calls //? Functions, especially those that return JSX, can be invoked directly within your JSX.
+
+ImportExport
+Default Export: A file can have only one default export. Default Import: When importing a default export, you can name the import whatever you like.
+
+Named Export: A file can have multiple named exports. Each named export must be explicitly exported.
+
+Named Import: When importing named exports, the import names must match the export names exactly. Named imports must be enclosed in curly braces.
