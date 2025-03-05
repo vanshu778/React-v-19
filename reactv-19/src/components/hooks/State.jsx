@@ -32,4 +32,4 @@ function ChildComponent({count}){
         <h2>Child component - {count}</h2>
     </div>
     );
-}
+} 

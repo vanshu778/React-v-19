@@ -5,7 +5,7 @@ import { EventHandling } from "./components/EventHandling";
 import { EventProps } from "./components/EventProps";
 import { EventPropagation } from "./components/EventPropagation";
 import { State } from "./components/hooks/State";
-
+import {DericedState} from "./components/DericedState"
 
 export const App = () => {
   return (
@@ -15,17 +15,9 @@ export const App = () => {
     {/* <EventHandling/> */}
     {/* <EventProps/> */}
     {/* <EventPropagation/> */}
-    <State/>
-    <Sibling/>
+    {/* <State/> */}
+    <DericedState/>
   </section>
    ) 
 };
 
-export function Sibling(){
-  console.log("Sibling Component rendered");
-  return (
-  <div className="main-div">
-      <h2>Sibling component</h2>
-  </div>
-  );
-}
