@@ -6,9 +6,9 @@ import { Practices } from './Practices.jsx'
 import Profile from './components/Profile.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ <StrictMode>
     <App />
-    {/* <Practices/> */}
-    {/* <Profile/> */}
-  </StrictMode>,
+    // {/* <Practices/> */}
+    // {/* <Profile/> */}
+ </StrictMode>,
 )
