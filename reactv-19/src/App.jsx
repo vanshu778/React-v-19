@@ -7,6 +7,7 @@ import { EventPropagation } from "./components/EventPropagation";
 import { State } from "./components/hooks/State";
 import {DericedState} from "./components/DericedState"
 import {DerivedState} from "./components/DerivedState"
+import {LiftStateUp} from "./components/LiftStateUp"
 
 export const App = () => {
   return (
@@ -18,7 +19,8 @@ export const App = () => {
     {/* <EventPropagation/> */}
     {/* <State/> */}
     {/* <DericedState/> */}
-    <DerivedState/>
+    {/* <DerivedState/> */}
+    <LiftStateUp/>
   </section>
    ) 
 };
