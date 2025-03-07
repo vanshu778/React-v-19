@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 /* theme */
-:root {
+/* :root {
   --main-color: #0062ff;
   --supporting-color: #ebf3fe;
   --font-color: #424242;
@@ -17,9 +17,9 @@
   --bnt-hover-bg-color: #003b99;
   --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
-/* base rule  */
-* {
+*/
+/* base rule */ 
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,6 +30,11 @@ html {
   font-size: 62.5%;
 }
 
+:root{
+  --primary-color: #1c2833;
+  --secondary-color:#fff;
+  --bg-color:#f2f3f4;
+}
 h1,
 h2,
 h3,
@@ -37,15 +42,15 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
+    font-weight: 900;
 }
 
 h1 {
   font-size: 3.2rem;
+  font-weight: bold;
 }
 
-p,
+/* p,
 li,
 a,
 label {
@@ -62,9 +67,9 @@ li {
 
 a {
   text-decoration: none;
-}
+} */
 
-/* layout */
+/* layout 
 
 .container {
   max-width: 142rem;
@@ -83,4 +88,4 @@ a {
 
 .grid-three--cols {
   grid-template-columns: repeat(3, 1fr);
-}
+} */
