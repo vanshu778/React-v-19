@@ -8,14 +8,22 @@ export const Todo = () => {
   const [task, setTask] = useState([]);
 
   const handleFormSubmit = (inputValue) => {
-    if (!inputValue) return;
-    if (task.includes(inputValue)) return;
-    setTask((prevTask) => [...prevTask, inputValue]);
+    const{id,content,checked} = inputValue;
+
+    //to check if the imput field is empty or not
+    if (!content) return;
+
+    //to check if the data is already existing or not
+    // if (task.includes(inputValue)) return;
+    const ifTodoContentMatched = task.find((curTask)=>curTask.content === content);
+    if(ifTodoContentMatched) return;
+
+    setTask((prevTask) => [...prevTask, {id, content, checked}]);
   };
 
   //Delete Functionality
   const handleDeleteTodo = (value) => {
-    const updatedTask = task.filter((curElem) => curElem != value);
+    const updatedTask = task.filter((curTask) => curTask.content != value);
     setTask(updatedTask);
   };
 
@@ -36,11 +44,11 @@ export const Todo = () => {
 
       <section className="myUnOrdList">
         <ul>
-          {task.map((curTask, index) => {
+          {task.map((curTask) => {
             return (
               <TodoList
-                key={index}
-                data={curTask}
+                key={curTask.index}
+                data={curTask.content}
                 onHandleDeleteTodo={handleDeleteTodo}
               />
             );
