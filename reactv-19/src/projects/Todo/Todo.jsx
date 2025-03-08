@@ -1,10 +1,12 @@
 import "./Todo.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCheck, MdDeleteForever } from "react-icons/md";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
   const [task, setTask] = useState([]);
+  const [dateTime, setDateTime] = useState("");
+
   const handleInputChange = (value) => {
     setInputValue(value);
   };
@@ -24,10 +26,34 @@ export const Todo = () => {
     setInputValue("");
   };
 
+  //Delete Functionality
+  const handleDeleteTodo = (value) => {
+    const updatedTask = task.filter((curElem)=> curElem!=value);
+    setTask(updatedTask);
+  };
+
+  //handleClearTodoData
+  const handleClearTodoData = () => {
+    setTask([]);
+  };
+
+  //todo date and time
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString();
+      const formattedTime = now.toLocaleTimeString();
+      setDateTime(`${formattedDate}-${formattedTime}`);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="todo-container">
       <header>
         <h1>Todo List</h1>
+        <h2 className="date-time">{dateTime}</h2>
       </header>
 
       <section className="form">
@@ -58,7 +84,7 @@ export const Todo = () => {
                 <button className="check-btn">
                   <MdCheck />
                 </button>
-                <button className="delete-btn">
+                <button className="delete-btn" onClick={() => handleDeleteTodo(curTask)}>
                   <MdDeleteForever />
                 </button>
               </li>
@@ -66,6 +92,8 @@ export const Todo = () => {
           })}
         </ul>
       </section>
+
+      <section className="clear-btn" onClick={handleClearTodoData}>Clear</section>
     </section>
   );
 };
